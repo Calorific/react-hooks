@@ -1,13 +1,15 @@
 import React from 'react'
 import CollapseWrapper from '../common/collapse'
+import PropTypes from 'prop-types'
 
 const ComponentList = ({ children }) => {
   return React.Children.map(children, (child, i) => (
-    <div style={{ display: 'flex' }}>
-      <p style={{ marginRight: '5px' }}>{i + 1}</p>{' '}
-      <Component />
-    </div>
+    <Component num={i + 1} />
   ))
+}
+
+ComponentList.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
 }
 
 const ChildrenExercise = () => {
@@ -30,8 +32,10 @@ const ChildrenExercise = () => {
   )
 }
 
-const Component = () => {
-  return <div>Компонент списка</div>
+const Component = ({ num }) => {
+  return <div>{num} Компонент списка</div>
 }
-
+Component.propTypes = {
+  num: PropTypes.number,
+}
 export default ChildrenExercise
