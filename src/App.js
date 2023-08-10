@@ -4,7 +4,7 @@ const AppLayout = () => {
   return (
       <>
         <h1>App Layout</h1>
-        <NavLink to="/users" exact>Users List Page</NavLink>
+        <NavLink to="/users">Users List Page</NavLink>
       </>
   )
 }
@@ -17,8 +17,8 @@ const UserProfile = () => {
       <h3>UserId: {userId}</h3>
 
       <ul>
-        <li><NavLink to="/users" exact>Users List Page</NavLink></li>
-        <li><NavLink to={'/users/' + userId + '/edit'} exact>Edit this user</NavLink></li>
+        <li><NavLink to="/users">Users List Page</NavLink></li>
+        <li><NavLink to={'/users/' + userId + '/edit'}>Edit this user</NavLink></li>
       </ul>
     </>
   )
@@ -32,11 +32,10 @@ const UserEdit = () => {
         <h3>UserId: {userId}</h3>
 
         <ul>
-          <li><NavLink to={'/users/' + userId + '/profile'} exact>User Profile Page</NavLink></li>
-          <li><NavLink to={'/users/' + ((+userId || 0) + 1) + '/profile'} exact>Another User</NavLink></li>
-          <li><NavLink to="/users" exact>Users List Page</NavLink></li>
+          <li><NavLink to={'/users/' + userId + '/profile'}>User Profile Page</NavLink></li>
+          <li><NavLink to={'/users/' + ((+userId || 0) + 1) + '/profile'}>Another User</NavLink></li>
+          <li><NavLink to="/users">Users List Page</NavLink></li>
         </ul>
-
       </>
   )
 }
@@ -57,7 +56,7 @@ const UsersLayout = () => {
   return (
       <>
         <h1>Users Layout</h1>
-        <NavLink to="/" exact>Main Page</NavLink>
+        <NavLink to="/">Main Page</NavLink>
 
         <br />
 
